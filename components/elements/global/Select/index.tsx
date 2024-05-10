@@ -1,6 +1,24 @@
 import React from "react";
 
-const Select = ({ optionDisabledText, dataOptions, classname, name }) => {
+interface Option {
+  id: string;
+  value: string;
+  label: string;
+}
+
+interface SelectProps {
+  optionDisabledText: string;
+  dataOptions: Option[];
+  classname?: string;
+  name: string;
+}
+
+const Select: React.FC<SelectProps> = ({
+  optionDisabledText,
+  dataOptions,
+  classname,
+  name,
+}) => {
   return (
     <select name={name} defaultValue={""} className={` ${classname}`}>
       <option value="" disabled>
