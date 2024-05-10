@@ -1,7 +1,14 @@
 import Image from "next/image";
-import React from "react";
+import React, { ReactNode } from "react";
 
-const Modal = ({ open, onClose, children, title }) => {
+interface ModalProps {
+  open: boolean;
+  onClose: () => void;
+  children: ReactNode;
+  title: string;
+}
+
+const Modal: React.FC<ModalProps> = ({ open, onClose, children, title }) => {
   return (
     <div
       onClick={onClose}

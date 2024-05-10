@@ -15,11 +15,11 @@ const PostCard = ({
   comments,
   post_id,
 }: Post) => {
-  const isHashtagPresent = (text) => {
+  const isHashtagPresent = (text: string) => {
     return /\B#\w*[a-zA-Z]+\w*/.test(text);
   };
 
-  const renderContent = (text) => {
+  const renderContent = (text: string) => {
     return (
       <span>
         {text.split(/(\B#\w*[a-zA-Z]+\w*)/).map((part, index) => {
@@ -87,7 +87,7 @@ const PostCard = ({
               />
             </span>
             <span className="flex items-center gap-[2px]">
-              <span className="text-md text-gray-500">{comments}</span>
+              <span className="text-md text-gray-500">{comments?.length}</span>
               <Image
                 src={"../images/chatbubbleleftellipsis.svg"}
                 alt="icon chatbubbleleftellipsis"

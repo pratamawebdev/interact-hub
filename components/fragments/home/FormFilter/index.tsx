@@ -9,12 +9,14 @@ const FormFilter = () => {
       <Select
         classname={"hidden md:select md:select-sm select-bordered  w-fit"}
         optionDisabledText={"Sort by"}
-        dataOptions={categoriesItems}
+        dataOptions={categoriesItems as Array<any>}
+        name="category"
       />
       <Select
         classname={"hidden md:select md:select-sm select-bordered w-fit"}
         optionDisabledText={"Sort by"}
-        dataOptions={categoriesItems}
+        dataOptions={categoriesItems as Array<any>}
+        name="category"
       />
       <Search />
     </form>
